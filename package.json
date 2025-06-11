@@ -1,0 +1,14 @@
+{
+  "name": "bmicalculator",
+  "version": "1.0.0",
+  "description": "Bmi calculator",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Nam Danh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
