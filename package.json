@@ -9,6 +9,7 @@
   "author": "Nam Danh",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.15.2",
     "parcel": "^2.15.2",
     "sass": "^1.89.2"
   }

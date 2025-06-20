@@ -1,0 +1,106 @@
+.container {
+  width: 400px;
+
+  .form-title {
+    font-size: 5rem;
+    font-weight: 800;
+    color: $color-grey-light-1;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .option-one {
+  }
+
+  .custom-field {
+    position: relative;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+
+    input {
+      border-radius: 5px;
+      margin: 20px 0;
+      display: block;
+      width: 250px;
+      height: 50px;
+      font-size: 14px;
+
+      border: none;
+      -webkit-appearance: none;
+      -ms-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: #f2f2f2;
+      padding: 12px;
+      border-radius: 3px;
+      outline: none;
+
+      // &::placeholder {
+      //   color: red;
+      //   transition: color 0.3s ease;
+      // }
+
+      // &:focus::placeholder {
+      //   color: transparent;
+      // }
+
+      &:valid + .placeholder,
+      &:focus + .placeholder {
+        top: -10px;
+        font-size: 12px;
+        font-weight: 800;
+        color: $color-grey-light-1;
+      }
+    }
+
+    input[type='number'] {
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button,
+      &::-ms-inner-spin-button,
+      &::-ms-outer-spin-button,
+      &::-moz-inner-spin-button,
+      &::-moz-outer-spin-button {
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        -moz-appearance: none;
+        margin: 0;
+      }
+
+      -webkit-appearance: textfield;
+      -ms-appearance: textfield;
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+
+    input[type='text']:not(:placeholder-shown),
+    input[type='number']:not(:placeholder-shown) {
+      font-family: 'Fustat', sans-serif;
+      font-weight: 800;
+      color: $color-secondary-bg;
+      font-size: 14px;
+    }
+
+    .placeholder {
+      position: absolute;
+      left: 12px;
+      top: calc(50% + 2px);
+      transform: translateY(-50%);
+      color: $color-grey-dark-2;
+      transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+}

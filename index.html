@@ -3,9 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="data:," />
     <!-- Blank favicon -->
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" src="src/js/controller.js"></script>
     <title>Bmi Calculator</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="form-title" style="font-family: 'Fustat', sans-serif">
+        BMI Calculator
+      </div>
+
+      <form class="option-one">
+        <label class="custom-field">
+          <input
+            id="mass-kg-id"
+            type="number"
+            class="mass-kg__field"
+            required
+          />
+          <span class="placeholder">Weight in kg?</span>
+          <!-- <use href="src/img/icons.svg#icon-mass-kg"></use> -->
+          <!-- <button class="btn mass-kg__btn">
+            <svg class="mass-kg__icon"></svg>
+            <span>mass-kg</span>
+          </button> -->
+        </label>
+        <label class="custom-field one">
+          <input
+            id="height-m-id"
+            type="number"
+            class="height-m__field"
+            required
+          />
+          <span class="placeholder">Height in M</span>
+        </label>
+
+        <div class="modal-result"></div>
+      </form>
+    </div>
+  </body>
 </html>

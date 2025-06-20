@@ -1,0 +1,81 @@
+$color-primary-bg: #82f3db;
+$color-secondary-bg: #01a3a3;
+$color-contrast: #ffee00;
+$color-grad-1: #a5cb7d;
+$color-grad-2: #456940;
+$color-grad-3: #82bb7a;
+$color-grad-4: #9dbd7b;
+
+$color-grey-light-1: #f9f5f3; // Light background
+$color-grey-light-2: #f2efee; // Light lines
+$color-grey-light-3: #d3c7c3; // Light text (placeholder)
+$color-grey-dark-1: #615551; // Normal text
+$color-grey-dark-2: #918581; // Lighter text
+
+$gradient: linear-gradient(
+  to right bottom,
+  $color-primary-bg,
+  $color-secondary-bg
+);
+
+$bp-large: 78.15em; // 1250px
+$bp-medium: 61.25em; // 980px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 56.25%; // ~9px
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%; // ~8px
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 43.75%; // ~7px
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 37.5%; // ~6px
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-flex;
+  display: flex; // Centering div vertically
+  flex-direction: column;
+  justify-content: center; // Centering div vertically
+  align-items: center; // Centering div vertically
+  font-family: 'Fustat', sans-serif;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.6;
+  color: $color-grey-dark-1;
+  background-image: $gradient;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
