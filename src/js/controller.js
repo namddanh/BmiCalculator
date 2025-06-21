@@ -1,38 +1,25 @@
-// const mark = {
-//   fullName: 'Mark Miller',
-//   mass: 78,
-//   height: 1.69,
+import { calculateBMI, getBmiCategory } from './model';
+import resultsView from './views/resultsView';
 
-//   calcBMI: function () {
-//     this.bmi = this.mass / this.height ** 2;
-//     return this.bmi;
-//   },
-// };
+const init = function () {
+  const optionOneForm = document.querySelector('.option-one');
+  optionOneForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-// const john = {
-//   fullName: 'John Smith',
-//   mass: 92,
-//   height: 1.95,
+    // Get values from input
+    const weight = +document.getElementById('mass-kg-id').value;
+    const height = +document.getElementById('height-m-id').value;
 
-//   calcBMI: function () {
-//     this.bmi = this.mass / this.height ** 2;
-//     return this.bmi;
-//   },
-// };
+    // Bmi Calculation
+    const bmi = calculateBMI(weight, height);
+    if (!bmi) return resultsView.clear();
 
-// const compareBMI = () => {
-//   const output =
-//     mark.calcBMI() >= john.calcBMI()
-//       ? `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`
-//       : `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`;
-//   console.log(output);
-// };
+    const category = getBmiCategory(bmi);
+    resultsView.render(bmi, category);
+  });
+};
 
-// compareBMI();
-// console.log('TEST');
-
-const massKgContainer = document.querySelector('.mass-kg');
-const heightMContainer = document.querySelector('.height-m');
+init();
 
 //  Food facts component
 

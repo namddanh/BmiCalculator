@@ -19,13 +19,15 @@
 
   .custom-field {
     position: relative;
+    display: block;
+    height: 50px;
+    margin-bottom: 30px;
+    padding-top: 0px;
     font-size: 14px;
-    padding-top: 20px;
-    margin-bottom: 5px;
 
     input {
       border-radius: 5px;
-      margin: 20px 0;
+      margin: 20px 0px 35px;
       display: block;
       width: 250px;
       height: 50px;
@@ -102,5 +104,11 @@
       -ms-user-select: none;
       user-select: none;
     }
+  }
+
+  .modal-result {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $color-grey-light-1;
   }
 }
