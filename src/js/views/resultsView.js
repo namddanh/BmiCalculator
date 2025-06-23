@@ -3,14 +3,20 @@ class ResultsView {
 
   render(bmi, category) {
     this._parentEl.innerHTML = `
-      <div style="font-family: 'Fustat', sans-serif">Your bmi is <strong>${bmi}</strong></div>
-      <div style="font-family: 'Fustat', sans-serif">Category: <strong>You are considered ${category}</strong></div>
+      <div>Your bmi is <strong>${bmi}</strong></div>
+      <div>You are considered <strong>${category}</strong></div>
     `;
+
+    // Add the show class after we insert content
+    this._parentEl.classList.add('show');
   }
 
   clear() {
     this._parentEl.innerHTML = '';
+    this._parentEl.classList.remove('show'); // hide it again
   }
+
+  toggleResults() {}
 }
 
 export default new ResultsView();
