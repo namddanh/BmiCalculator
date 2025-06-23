@@ -1,5 +1,6 @@
 .container {
   width: 400px;
+  font-family: 'Fustat', sans-serif;
 
   .form-title {
     font-size: 5rem;
@@ -13,8 +14,6 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  .option-one {
   }
 
   .custom-field {
@@ -106,9 +105,42 @@
     }
   }
 
+  .option-one {
+    .option-one__btn {
+      background-color: $color-contrast;
+      width: 100px;
+      height: 50px;
+      border-radius: 9px;
+      box-shadow: 0 0.9rem 2rem 0.5rem rgba($color-grey-dark-1, 0.5);
+      cursor: pointer;
+    }
+  }
+
+  .btn {
+    font-family: 'Fustat', sans-serif;
+    font-weight: 800;
+  }
+
   .modal-result {
+    margin-top: 20px;
     font-size: 2rem;
     font-weight: 800;
     color: $color-grey-light-1;
+
+    transform: translateX(-50px); // 50px down initially
+    opacity: 0;
+
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &.show {
+      transform: translateX(0); // move up into place
+      opacity: 1;
+    }
+
+    div {
+      font-family: 'Fustat', sans-serif;
+    }
   }
 }
