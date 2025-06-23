@@ -3,15 +3,42 @@ import resultsView from './views/resultsView';
 
 const init = function () {
   const optionOneForm = document.querySelector('.option-one');
-  optionOneForm.addEventListener('submit', function (e) {
+  const weightInput = document.getElementById('mass-kg-id');
+  const heightInput = document.getElementById('height-m-id');
+
+  weightInput.addEventListener('input', e => {
+    if (e.target.value.length > 5) {
+      e.target.value = e.target.value.slice(0, 5);
+    }
+  });
+
+  heightInput.addEventListener('input', e => {
+    let raw = e.target.value;
+
+    // If empty or a single digit, don't add the dot
+    if (raw.length <= 1) return;
+
+    // Remove existing dot so we can reformat
+    let value = raw.replace('.', '');
+
+    // Insert dot after the first digit
+    value = value[0] + '.' + value.slice(1);
+
+    // Limit to max 4 chars (e.g. 1.70)
+    if (value.length > 4) value = value.slice(0, 4);
+
+    e.target.value = value;
+  });
+
+  optionOneForm.addEventListener('submit', e => {
     e.preventDefault();
 
     // Get values from input
-    const weight = +document.getElementById('mass-kg-id').value;
-    const height = +document.getElementById('height-m-id').value;
+    const weightValue = +document.getElementById('mass-kg-id').value;
+    const heightValue = +document.getElementById('height-m-id').value;
 
     // Bmi Calculation
-    const bmi = calculateBMI(weight, height);
+    const bmi = calculateBMI(weightValue, heightValue);
     if (!bmi) return resultsView.clear();
 
     const category = getBmiCategory(bmi);
